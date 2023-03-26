@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import image from '../assets/img1.jpg'
 import { Link } from 'react-router-dom'
-import {UserAuth} from '../context/AuthContext'
+// import {UserAuth} from '../context/AuthContext'
 
 const SignUp = () => {
 
@@ -11,14 +11,15 @@ const SignUp = () => {
 
     const handleSubmit = async (e) =>
     {
-        e.preventDefault()
-        try{
-            await signUp(email, password)
-        }
-        catch(err)
-        {
-            console.log(err)
-        }
+        alert("currently not working ;-) Go to home page by clicking on NETFLIX")
+        // e.preventDefault()
+        // try{
+        //     await signUp(email, password)
+        // }
+        // catch(err)
+        // {
+        //     console.log(err)
+        // }
     }
   return (
     <div className='w-full h-screen'>

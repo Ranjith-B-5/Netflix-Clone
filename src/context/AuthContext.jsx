@@ -1,56 +1,56 @@
-import React from "react";
-import { createContext, useContext, useEffect, useState } from "react";
-import auth from '../Firebase'
-import {
-    createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
-    signOut,
-    onAuthStateChanged,
-} from 'firebase/auth'
+// import React from "react";
+// import { createContext, useContext, useEffect, useState } from "react";
+// import auth from '../Firebase'
+// import {
+//     createUserWithEmailAndPassword,
+//     signInWithEmailAndPassword,
+//     signOut,
+//     onAuthStateChanged,
+// } from 'firebase/auth'
  
-const AuthContext = createContext()
+// const AuthContext = createContext()
 
-const AuthContextProvider = ({children}) =>
-{
-    const[user, setUser] = useState({})
+// const AuthContextProvider = ({children}) =>
+// {
+//     const[user, setUser] = useState({})
 
-    function signUp(email, password)
-    {
-        return createUserWithEmailAndPassword(auth, email, password);
-    }
+//     function signUp(email, password)
+//     {
+//         return createUserWithEmailAndPassword(auth, email, password);
+//     }
 
-    function logOut()
-    {
-        return signOut(auth)
-    }
+//     function logOut()
+//     {
+//         return signOut(auth)
+//     }
 
-    function logIn(email, password)
-    {
-        return signInWithEmailAndPassword(auth, email, passsword);
-    }
+//     function logIn(email, password)
+//     {
+//         return signInWithEmailAndPassword(auth, email, passsword);
+//     }
 
-    useEffect(()=>
-    {
-        const unsubscribe = onAuthStateChanged(auth, (currentuser)=>
-        {
-            setUser(currentuser)
-        });
-        return () =>
-        {
-            unsubscribe();
-        }
-    })
+//     useEffect(()=>
+//     {
+//         const unsubscribe = onAuthStateChanged(auth, (currentuser)=>
+//         {
+//             setUser(currentuser)
+//         });
+//         return () =>
+//         {
+//             unsubscribe();
+//         }
+//     })
 
-    return(
-        <AuthContext.Provider value={{signUp, logIn, logOut, user}}>
-            {children}
-        </AuthContext.Provider>
-    )
-}
+//     return(
+//         <AuthContext.Provider value={{signUp, logIn, logOut, user}}>
+//             {children}
+//         </AuthContext.Provider>
+//     )
+// }
 
-const UserAuth = () =>
-{
-    return useContext(AuthContext)
-}
+// const UserAuth = () =>
+// {
+//     return useContext(AuthContext)
+// }
 
- export {AuthContextProvider, UserAuth};
+//  export {AuthContextProvider, UserAuth};
